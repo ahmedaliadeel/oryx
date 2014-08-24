@@ -1,0 +1,70 @@
+
+<!doctype html>
+    <html  >
+        <head>
+            <title>Angular tests</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            
+            <script language="JavaScript" src="/static/library/05-init.js"></script>
+            <script language="JavaScript" src="/static/library/10-builtin.js"></script>
+            <script language="JavaScript" src="/static/library/20-type-iter.js"></script>
+            <script language="JavaScript" src="/static/library/21-type-slice.js"></script>
+            <script language="JavaScript" src="/static/library/22-type-tuple.js"></script>
+            <script language="JavaScript" src="/static/library/23-type-list.js"></script>
+            <script language="JavaScript" src="/static/library/24-type-dict.js"></script>
+            <script language="JavaScript" src="/static/library/25-type-str.js"></script>
+            <script language="JavaScript" src="/static/library/40-python-functions.js"></script>
+            <script language="JavaScript" src="/static/library/41-python-classes.js"></script>
+            <script language="JavaScript" src="/static/library/50-object.js"></script>
+            <script language="JavaScript" src="/static/library/60-sprintf.js"></script>
+            <script language="JavaScript" src="/static/library/70-module.js"></script>
+            <script language="JavaScript" src="/static/library/72-notimplemented.js"></script>
+            <script language="JavaScript" src="/static/library/73-module-sys.js"></script>
+            <script language="JavaScript" src="/static/library/74-module-path.js"></script>
+            <script language="JavaScript" src="/static/library/75-module-builtins.js"></script>
+            <script language="JavaScript" src="/static/library/76-module-init.js"></script>
+            <script src="/static/angular.js"></script>
+            <style type="text/css">
+            #circle {
+                    border-radius: 50%;
+                    width: 200px;
+                    height: 200px;
+                    top:200px; 
+                    left:0px;
+                    background:red;
+                    position:absolute;
+                    transition:1s;
+                    -webkit-transition: 1s; /* Safari */
+                    max-width:400px;
+                    max-height:400px;
+
+                }
+            </style>
+            
+            <script type="text/javascript">
+             var app = angular.module('app', []);
+
+                
+                var dhttp = undefined;
+                app.controller("MyController", function($scope, $http) {
+                     dhttp = $http;
+                     $scope.data = {'style':'9999999'};
+                     
+                     {{PASTE_FUNCS}}
+                });
+                
+            
+               
+            </script>
+	</head>
+    <body ng-app="app" >
+        <div ng-controller="MyController">
+<input type="button" value="Click Here for Both ClientSide and ServerSide Reaction" ng-click="scopeFunc('bill')"/><br>
+            <p>myStyle=<[data.style]></p>
+            <p></p>
+        
+        
+    </div>
+    </body>
+    </html>    
